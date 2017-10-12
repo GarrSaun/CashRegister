@@ -82,5 +82,8 @@
   <ItemGroup>
     <None Include="Resources\print.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

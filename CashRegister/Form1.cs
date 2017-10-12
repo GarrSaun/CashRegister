@@ -1,4 +1,4 @@
-﻿///Garrett Cash Register Program
+﻿///Garrett - Cash Register Program
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +16,15 @@ namespace CashRegister
     public partial class calulatorForm : Form
     {
         //Global Variables
+        double burgerCost;
+        double friesCost;
+        double drinksCost;
+        double subTotal;
+        double totalTax;
+        double total;
+        double change;
+        int orderNumber;
+
         //Global Input Variables
         int burgers;
         int fries;
@@ -26,19 +35,8 @@ namespace CashRegister
         const double BURGER_PRICE = 2.49;
         const double FRIES_PRICE = 1.89;
         const double DRINKS_PRICE = 0.99;
-        const double TAX_RATE = 0.13;
-
-        //Global Variables That Need to be Calculated
-        double burgerCost;
-        double friesCost;
-        double drinksCost;
-        double subTotal;
-        double totalTax;
-        double total;
-        double change;
-        int orderNumber;
-
-
+        const double TAX_RATE = 0.13;   
+                  
         public calulatorForm()
         {
             InitializeComponent();
@@ -127,123 +125,152 @@ namespace CashRegister
             printPlayer.Play();
 
             //Set up graphics
-            Graphics fg = this.CreateGraphics();
+            Graphics onScreen = this.CreateGraphics();
+            Bitmap bm = new Bitmap(this.Width, this.Height);
+            Graphics offScreen = Graphics.FromImage(bm);
             Pen receiptPen = new Pen(Color.Black, 2);
             SolidBrush receiptBrush = new SolidBrush(Color.White);
             Font printFont = new Font("Segoe UI", 8, FontStyle.Bold);
             SolidBrush printBrush = new SolidBrush(Color.Black);
 
             //Draw receipt
-            fg.Clear(Color.LightGray);
+            onScreen.Clear(Color.LightGray);
 
             orderNumber = orderNumber + 1;
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 25);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 25);
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 25);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 25);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //1
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 50);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 50);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 50);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 50);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //2
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 100);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 100);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
-            fg.DrawString("Hamburgers x" + burgers + " @" +
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 100);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 100);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawString("Hamburgers x" + burgers + " @" +
                 BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //3
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 150);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 150);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
-            fg.DrawString("Hamburgers x" + burgers + " @" +
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 150);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 150);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawString("Hamburgers x" + burgers + " @" +
                 BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
-            fg.DrawString("Fries x" + fries + " @" +
+            offScreen.DrawString("Fries x" + fries + " @" +
                 FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //4
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 200);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 200);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
-            fg.DrawString("Hamburgers x" + burgers + " @" +
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 200);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 200);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawString("Hamburgers x" + burgers + " @" +
                 BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
-            fg.DrawString("Fries x" + fries + " @" +
+            offScreen.DrawString("Fries x" + fries + " @" +
                 FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
-            fg.DrawString("Drinks x" + drinks + " @" +
+            offScreen.DrawString("Drinks x" + drinks + " @" +
                 DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //5
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 250);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 250);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
-            fg.DrawString("Hamburgers x" + burgers + " @" +
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 250);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 250);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawString("Hamburgers x" + burgers + " @" +
                 BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
-            fg.DrawString("Fries x" + fries + " @" +
+            offScreen.DrawString("Fries x" + fries + " @" +
                 FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
-            fg.DrawString("Drinks x" + drinks + " @" +
+            offScreen.DrawString("Drinks x" + drinks + " @" +
                 DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            fg.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
                 , printFont, printBrush, 275, 260);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //6
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 300);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 300);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
-            fg.DrawString("Hamburgers x" + burgers + " @" +
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 300);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 300);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawString("Hamburgers x" + burgers + " @" +
                 BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
-            fg.DrawString("Fries x" + fries + " @" +
+            offScreen.DrawString("Fries x" + fries + " @" +
                 FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
-            fg.DrawString("Drinks x" + drinks + " @" +
+            offScreen.DrawString("Drinks x" + drinks + " @" +
                 DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            fg.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
                 , printFont, printBrush, 275, 260);
-            fg.DrawString("Tax =" + totalTax.ToString("$0.00")
+            offScreen.DrawString("Tax =" + totalTax.ToString("$0.00")
                 , printFont, printBrush, 275, 310);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //7
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 350);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 350);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
-            fg.DrawString("Hamburgers x" + burgers + " @" +
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 350);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 350);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawString("Hamburgers x" + burgers + " @" +
                 BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
-            fg.DrawString("Fries x" + fries + " @" +
+            offScreen.DrawString("Fries x" + fries + " @" +
                 FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
-            fg.DrawString("Drinks x" + drinks + " @" +
+            offScreen.DrawString("Drinks x" + drinks + " @" +
                 DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            fg.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
                 , printFont, printBrush, 275, 260);
-            fg.DrawString("Tax =" + totalTax.ToString("$0.00")
+            offScreen.DrawString("Tax =" + totalTax.ToString("$0.00")
                 , printFont, printBrush, 275, 310);
-            fg.DrawString("Total =" + total.ToString("$0.00")
+            offScreen.DrawString("Total =" + total.ToString("$0.00")
                 , printFont, printBrush, 275, 360);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             Thread.Sleep(250); //8
 
-            fg.DrawRectangle(receiptPen, 250, 30, 225, 400);
-            fg.FillRectangle(receiptBrush, 250, 30, 225, 400);
-            fg.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
-            fg.DrawString("Hamburgers x" + burgers + " @" +
+            offScreen.DrawRectangle(receiptPen, 250, 30, 225, 400);
+            offScreen.FillRectangle(receiptBrush, 250, 30, 225, 400);
+            offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
+            offScreen.DrawString("Hamburgers x" + burgers + " @" +
                 BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
-            fg.DrawString("Fries x" + fries + " @" +
+            offScreen.DrawString("Fries x" + fries + " @" +
                 FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
-            fg.DrawString("Drinks x" + drinks + " @" +
+            offScreen.DrawString("Drinks x" + drinks + " @" +
                 DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            fg.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
                 , printFont, printBrush, 275, 260);
-            fg.DrawString("Tax =" + totalTax.ToString("$0.00")
+            offScreen.DrawString("Tax =" + totalTax.ToString("$0.00")
                 , printFont, printBrush, 275, 310);
-            fg.DrawString("Total =" + total.ToString("$0.00")
+            offScreen.DrawString("Total =" + total.ToString("$0.00")
                 , printFont, printBrush, 275, 360);
-            fg.DrawString("Amount Tendered =" + amountTendered.ToString("$0.00") + "\n" +
+            offScreen.DrawString("Amount Tendered =" + amountTendered.ToString("$0.00") + "\n" +
                 "Change Due = " + change.ToString("$0.00"), printFont, printBrush, 275, 400);
+
+            onScreen.DrawImage(bm, 0, 0);
+            offScreen.Clear(Color.LightGray);
 
             newButton.Visible = true;
             receiptButton.Visible = false;

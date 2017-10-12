@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calulatorForm));
             this.burgerBox = new System.Windows.Forms.TextBox();
             this.friesBox = new System.Windows.Forms.TextBox();
             this.drinkBox = new System.Windows.Forms.TextBox();
@@ -222,6 +223,7 @@
             this.Controls.Add(this.drinkBox);
             this.Controls.Add(this.friesBox);
             this.Controls.Add(this.burgerBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "calulatorForm";
             this.Text = "Cash Register";
             this.ResumeLayout(false);
