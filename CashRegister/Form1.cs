@@ -64,7 +64,6 @@ namespace CashRegister
         }
 
         //Calculate Cost with Tax
-
         private void goButton_Click(object sender, EventArgs e)
         {
             try
