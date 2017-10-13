@@ -91,6 +91,7 @@ namespace CashRegister
             catch
             {
                 totalLabel.Text = "Something went wrong. Try again!";
+                receiptButton.Visible = false;
                 return;
             }
 
@@ -115,13 +116,15 @@ namespace CashRegister
                 {
                     changeLabel.Text = "You need an extra " + (change*-1).ToString("¥0.00") +
                         " to afford that.";
+                    receiptButton.Visible = false;
                 }
             }
 
             catch
             {
                 changeLabel.Text = "Something went wrong.";
-                return;    
+                receiptButton.Visible = false;
+                return;
             }
         }
 
