@@ -135,7 +135,7 @@
             this.tenderedBox.Location = new System.Drawing.Point(96, 249);
             this.tenderedBox.Name = "tenderedBox";
             this.tenderedBox.Size = new System.Drawing.Size(94, 20);
-            this.tenderedBox.TabIndex = 8;
+            this.tenderedBox.TabIndex = 4;
             this.tenderedBox.Text = "0";
             this.tenderedBox.Click += new System.EventHandler(this.tenderedBox_Click);
             // 
@@ -159,7 +159,7 @@
             this.changeButton.Location = new System.Drawing.Point(27, 272);
             this.changeButton.Name = "changeButton";
             this.changeButton.Size = new System.Drawing.Size(126, 21);
-            this.changeButton.TabIndex = 10;
+            this.changeButton.TabIndex = 5;
             this.changeButton.Text = "Calculate Change";
             this.changeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.changeButton.UseVisualStyleBackColor = false;
@@ -185,7 +185,7 @@
             this.receiptButton.Location = new System.Drawing.Point(15, 387);
             this.receiptButton.Name = "receiptButton";
             this.receiptButton.Size = new System.Drawing.Size(169, 34);
-            this.receiptButton.TabIndex = 12;
+            this.receiptButton.TabIndex = 6;
             this.receiptButton.Text = "Print Receipt";
             this.receiptButton.UseVisualStyleBackColor = false;
             this.receiptButton.Visible = false;
@@ -201,7 +201,7 @@
             this.newButton.Location = new System.Drawing.Point(318, 2);
             this.newButton.Name = "newButton";
             this.newButton.Size = new System.Drawing.Size(102, 25);
-            this.newButton.TabIndex = 13;
+            this.newButton.TabIndex = 7;
             this.newButton.Text = "New Order";
             this.newButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.newButton.UseVisualStyleBackColor = false;

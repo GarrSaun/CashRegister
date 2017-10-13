@@ -142,7 +142,7 @@ namespace CashRegister
             SolidBrush printBrush = new SolidBrush(Color.Black);
 
             //Draw receipt
-            onScreen.Clear(Color.LightGray);
+            onScreen.Clear(Color.Firebrick);
 
             orderNumber = orderNumber + 1;
 
@@ -310,7 +310,13 @@ namespace CashRegister
             totalLabel.Text = "";
             changeLabel.Text = "";
 
+            //Clear Receipt Stuff
             newButton.Visible = false;
+            Graphics clearGraphics = this.CreateGraphics();
+            SolidBrush clearBrush = new SolidBrush(Color.Firebrick);
+            Pen clearPen = new Pen(Color.Firebrick, 2);
+            clearGraphics.DrawRectangle(clearPen, 250, 30, 225, 400);
+            clearGraphics.FillRectangle(clearBrush, 250, 30, 225, 400);
         }
     }
 }
