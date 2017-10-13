@@ -43,11 +43,12 @@
             this.changeLabel = new System.Windows.Forms.Label();
             this.receiptButton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // burgerBox
             // 
-            this.burgerBox.Location = new System.Drawing.Point(96, 12);
+            this.burgerBox.Location = new System.Drawing.Point(96, 62);
             this.burgerBox.Name = "burgerBox";
             this.burgerBox.Size = new System.Drawing.Size(94, 20);
             this.burgerBox.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             // friesBox
             // 
-            this.friesBox.Location = new System.Drawing.Point(96, 52);
+            this.friesBox.Location = new System.Drawing.Point(96, 88);
             this.friesBox.Name = "friesBox";
             this.friesBox.Size = new System.Drawing.Size(94, 20);
             this.friesBox.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             // drinkBox
             // 
-            this.drinkBox.Location = new System.Drawing.Point(96, 89);
+            this.drinkBox.Location = new System.Drawing.Point(96, 114);
             this.drinkBox.Name = "drinkBox";
             this.drinkBox.Size = new System.Drawing.Size(94, 20);
             this.drinkBox.TabIndex = 2;
@@ -79,7 +80,7 @@
             this.goButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.goButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goButton.Location = new System.Drawing.Point(21, 127);
+            this.goButton.Location = new System.Drawing.Point(21, 149);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(169, 34);
             this.goButton.TabIndex = 3;
@@ -91,7 +92,8 @@
             // 
             this.burgerLabel.AutoSize = true;
             this.burgerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.burgerLabel.Location = new System.Drawing.Point(18, 19);
+            this.burgerLabel.ForeColor = System.Drawing.Color.White;
+            this.burgerLabel.Location = new System.Drawing.Point(18, 65);
             this.burgerLabel.Name = "burgerLabel";
             this.burgerLabel.Size = new System.Drawing.Size(65, 13);
             this.burgerLabel.TabIndex = 4;
@@ -101,7 +103,8 @@
             // 
             this.friesLabel.AutoSize = true;
             this.friesLabel.BackColor = System.Drawing.Color.Transparent;
-            this.friesLabel.Location = new System.Drawing.Point(32, 55);
+            this.friesLabel.ForeColor = System.Drawing.Color.White;
+            this.friesLabel.Location = new System.Drawing.Point(32, 91);
             this.friesLabel.Name = "friesLabel";
             this.friesLabel.Size = new System.Drawing.Size(51, 13);
             this.friesLabel.TabIndex = 5;
@@ -111,7 +114,8 @@
             // 
             this.drinkLabel.AutoSize = true;
             this.drinkLabel.BackColor = System.Drawing.Color.Transparent;
-            this.drinkLabel.Location = new System.Drawing.Point(24, 92);
+            this.drinkLabel.ForeColor = System.Drawing.Color.White;
+            this.drinkLabel.Location = new System.Drawing.Point(24, 117);
             this.drinkLabel.Name = "drinkLabel";
             this.drinkLabel.Size = new System.Drawing.Size(59, 13);
             this.drinkLabel.TabIndex = 6;
@@ -121,14 +125,14 @@
             // 
             this.totalLabel.BackColor = System.Drawing.Color.White;
             this.totalLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.Location = new System.Drawing.Point(24, 164);
+            this.totalLabel.Location = new System.Drawing.Point(24, 186);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(166, 60);
             this.totalLabel.TabIndex = 7;
             // 
             // tenderedBox
             // 
-            this.tenderedBox.Location = new System.Drawing.Point(96, 230);
+            this.tenderedBox.Location = new System.Drawing.Point(96, 249);
             this.tenderedBox.Name = "tenderedBox";
             this.tenderedBox.Size = new System.Drawing.Size(94, 20);
             this.tenderedBox.TabIndex = 8;
@@ -139,7 +143,8 @@
             // 
             this.tenderdLabel.AutoSize = true;
             this.tenderdLabel.BackColor = System.Drawing.Color.Transparent;
-            this.tenderdLabel.Location = new System.Drawing.Point(3, 237);
+            this.tenderdLabel.ForeColor = System.Drawing.Color.White;
+            this.tenderdLabel.Location = new System.Drawing.Point(-2, 252);
             this.tenderdLabel.Name = "tenderdLabel";
             this.tenderdLabel.Size = new System.Drawing.Size(92, 13);
             this.tenderdLabel.TabIndex = 9;
@@ -151,7 +156,7 @@
             this.changeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
             this.changeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.changeButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeButton.Location = new System.Drawing.Point(27, 256);
+            this.changeButton.Location = new System.Drawing.Point(27, 272);
             this.changeButton.Name = "changeButton";
             this.changeButton.Size = new System.Drawing.Size(126, 21);
             this.changeButton.TabIndex = 10;
@@ -164,9 +169,9 @@
             // 
             this.changeLabel.BackColor = System.Drawing.Color.White;
             this.changeLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLabel.Location = new System.Drawing.Point(12, 280);
+            this.changeLabel.Location = new System.Drawing.Point(12, 296);
             this.changeLabel.Name = "changeLabel";
-            this.changeLabel.Size = new System.Drawing.Size(172, 104);
+            this.changeLabel.Size = new System.Drawing.Size(172, 88);
             this.changeLabel.TabIndex = 11;
             this.changeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -203,12 +208,24 @@
             this.newButton.Visible = false;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.BackColor = System.Drawing.Color.White;
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(30, 9);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(145, 30);
+            this.nameLabel.TabIndex = 14;
+            this.nameLabel.Text = "King Donalds";
+            // 
             // calulatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(488, 450);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.newButton);
             this.Controls.Add(this.receiptButton);
             this.Controls.Add(this.changeLabel);
@@ -247,6 +264,7 @@
         private System.Windows.Forms.Label changeLabel;
         private System.Windows.Forms.Button receiptButton;
         private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.Label nameLabel;
     }
 }
 

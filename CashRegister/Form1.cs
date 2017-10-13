@@ -1,4 +1,4 @@
-﻿///Garrett - Cash Register Program
+﻿///Garrett - Cash Register Program - October 2017
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,9 +83,9 @@ namespace CashRegister
                         + drinksCost) * TAX_RATE;
                     total = totalTax + subTotal;
 
-                    totalLabel.Text = "Sub Total: " + subTotal.ToString("$0.00") + "\n" +
-                        "Tax: " + totalTax.ToString("$0.00") + "\n" +
-                        "Total: " + total.ToString("$0.00");
+                    totalLabel.Text = "Sub Total: " + subTotal.ToString("¥0.00") + "\n" +
+                        "Tax: " + totalTax.ToString("¥0.00") + "\n" +
+                        "Total: " + total.ToString("¥0.00");
             }
 
             catch
@@ -107,13 +107,13 @@ namespace CashRegister
 
                 if (change >= 0)
                 {
-                    changeLabel.Text = "Change: " + change.ToString("$0.00");
+                    changeLabel.Text = "Change: " + change.ToString("¥0.00");
 
                     receiptButton.Visible = true;
                 }
                 else
                 {
-                    changeLabel.Text = "You need an extra " + (change*-1).ToString("$0.00") +
+                    changeLabel.Text = "You need an extra " + (change*-1).ToString("¥0.00") +
                         " to afford that.";
                 }
             }
@@ -150,7 +150,7 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 25);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //1
 
@@ -159,7 +159,7 @@ namespace CashRegister
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //2
 
@@ -167,10 +167,10 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 100);
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
             offScreen.DrawString("Hamburgers x" + burgers + " @" +
-                BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+                BURGER_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 110);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //3
 
@@ -178,12 +178,12 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 150);
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
             offScreen.DrawString("Hamburgers x" + burgers + " @" +
-                BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+                BURGER_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 110);
             offScreen.DrawString("Fries x" + fries + " @" +
-                FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
+                FRIES_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 160);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //4
 
@@ -191,14 +191,14 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 200);
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
             offScreen.DrawString("Hamburgers x" + burgers + " @" +
-                BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+                BURGER_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 110);
             offScreen.DrawString("Fries x" + fries + " @" +
-                FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
+                FRIES_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 160);
             offScreen.DrawString("Drinks x" + drinks + " @" +
-                DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
+                DRINKS_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 210);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //5
 
@@ -206,16 +206,16 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 250);
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
             offScreen.DrawString("Hamburgers x" + burgers + " @" +
-                BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+                BURGER_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 110);
             offScreen.DrawString("Fries x" + fries + " @" +
-                FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
+                FRIES_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 160);
             offScreen.DrawString("Drinks x" + drinks + " @" +
-                DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+                DRINKS_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 210);
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("¥0.00")
                 , printFont, printBrush, 275, 260);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //6
 
@@ -223,18 +223,18 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 300);
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
             offScreen.DrawString("Hamburgers x" + burgers + " @" +
-                BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+                BURGER_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 110);
             offScreen.DrawString("Fries x" + fries + " @" +
-                FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
+                FRIES_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 160);
             offScreen.DrawString("Drinks x" + drinks + " @" +
-                DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+                DRINKS_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 210);
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("¥0.00")
                 , printFont, printBrush, 275, 260);
-            offScreen.DrawString("Tax =" + totalTax.ToString("$0.00")
+            offScreen.DrawString("Tax =" + totalTax.ToString("¥0.00")
                 , printFont, printBrush, 275, 310);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //7
 
@@ -242,20 +242,20 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 350);
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
             offScreen.DrawString("Hamburgers x" + burgers + " @" +
-                BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+                BURGER_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 110);
             offScreen.DrawString("Fries x" + fries + " @" +
-                FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
+                FRIES_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 160);
             offScreen.DrawString("Drinks x" + drinks + " @" +
-                DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+                DRINKS_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 210);
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("¥0.00")
                 , printFont, printBrush, 275, 260);
-            offScreen.DrawString("Tax =" + totalTax.ToString("$0.00")
+            offScreen.DrawString("Tax =" + totalTax.ToString("¥0.00")
                 , printFont, printBrush, 275, 310);
-            offScreen.DrawString("Total =" + total.ToString("$0.00")
+            offScreen.DrawString("Total =" + total.ToString("¥0.00")
                 , printFont, printBrush, 275, 360);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             Thread.Sleep(TIME); //8
 
@@ -263,22 +263,22 @@ namespace CashRegister
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 400);
             offScreen.DrawString("Order Number " + orderNumber, printFont, printBrush, 275, 70);
             offScreen.DrawString("Hamburgers x" + burgers + " @" +
-                BURGER_PRICE.ToString("$0.00"), printFont, printBrush, 275, 110);
+                BURGER_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 110);
             offScreen.DrawString("Fries x" + fries + " @" +
-                FRIES_PRICE.ToString("$0.00"), printFont, printBrush, 275, 160);
+                FRIES_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 160);
             offScreen.DrawString("Drinks x" + drinks + " @" +
-                DRINKS_PRICE.ToString("$0.00"), printFont, printBrush, 275, 210);
-            offScreen.DrawString("Subtotal =" + subTotal.ToString("$0.00")
+                DRINKS_PRICE.ToString("¥0.00"), printFont, printBrush, 275, 210);
+            offScreen.DrawString("Subtotal =" + subTotal.ToString("¥0.00")
                 , printFont, printBrush, 275, 260);
-            offScreen.DrawString("Tax =" + totalTax.ToString("$0.00")
+            offScreen.DrawString("Tax =" + totalTax.ToString("¥0.00")
                 , printFont, printBrush, 275, 310);
-            offScreen.DrawString("Total =" + total.ToString("$0.00")
+            offScreen.DrawString("Total =" + total.ToString("¥0.00")
                 , printFont, printBrush, 275, 360);
-            offScreen.DrawString("Amount Tendered =" + amountTendered.ToString("$0.00") + "\n" +
-                "Change Due = " + change.ToString("$0.00"), printFont, printBrush, 275, 400);
+            offScreen.DrawString("Amount Tendered =" + amountTendered.ToString("¥0.00") + "\n" +
+                "Change Due = " + change.ToString("¥0.00"), printFont, printBrush, 275, 400);
 
             onScreen.DrawImage(bm, 0, 0);
-            offScreen.Clear(Color.LightGray);
+            offScreen.Clear(Color.Firebrick);
 
             newButton.Visible = true;
             receiptButton.Visible = false;
