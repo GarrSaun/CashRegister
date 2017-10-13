@@ -35,7 +35,8 @@ namespace CashRegister
         const double BURGER_PRICE = 2.49;
         const double FRIES_PRICE = 1.89;
         const double DRINKS_PRICE = 0.99;
-        const double TAX_RATE = 0.13;   
+        const double TAX_RATE = 0.13;
+        const int TIME = 250;
                   
         public calulatorForm()
         {
@@ -68,23 +69,23 @@ namespace CashRegister
         {
             try
             {
-                burgers = Convert.ToInt16(burgerBox.Text);
-                fries = Convert.ToInt16(friesBox.Text);
-                drinks = Convert.ToInt16(drinkBox.Text);
+                    burgers = Convert.ToInt16(burgerBox.Text);
+                    fries = Convert.ToInt16(friesBox.Text);
+                    drinks = Convert.ToInt16(drinkBox.Text);
 
-                burgerCost = burgers * BURGER_PRICE;
-                friesCost = fries * FRIES_PRICE;
-                drinksCost = drinks * DRINKS_PRICE;
+                    burgerCost = burgers * BURGER_PRICE;
+                    friesCost = fries * FRIES_PRICE;
+                    drinksCost = drinks * DRINKS_PRICE;
 
-                subTotal = burgerCost + friesCost
-                    + drinksCost;
-                totalTax = (burgerCost + friesCost
-                    + drinksCost) * TAX_RATE;
-                total = totalTax + subTotal;
+                    subTotal = burgerCost + friesCost
+                        + drinksCost;
+                    totalTax = (burgerCost + friesCost
+                        + drinksCost) * TAX_RATE;
+                    total = totalTax + subTotal;
 
-                totalLabel.Text = "Sub Total: " + subTotal.ToString("$0.00") + "\n" +
-                    "Tax: " + totalTax.ToString("$0.00") + "\n" +
-                    "Total: " + total.ToString("$0.00");
+                    totalLabel.Text = "Sub Total: " + subTotal.ToString("$0.00") + "\n" +
+                        "Tax: " + totalTax.ToString("$0.00") + "\n" +
+                        "Total: " + total.ToString("$0.00");
             }
 
             catch
@@ -104,9 +105,17 @@ namespace CashRegister
 
                 change = amountTendered - total;
 
-                changeLabel.Text = "Change: " + change.ToString("$0.00");
+                if (change >= 0)
+                {
+                    changeLabel.Text = "Change: " + change.ToString("$0.00");
 
-                receiptButton.Visible = true;
+                    receiptButton.Visible = true;
+                }
+                else
+                {
+                    changeLabel.Text = "You need an extra " + (change*-1).ToString("$0.00") +
+                        " to afford that.";
+                }
             }
 
             catch
@@ -143,7 +152,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //1
+            Thread.Sleep(TIME); //1
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 50);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 50);
@@ -152,7 +161,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //2
+            Thread.Sleep(TIME); //2
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 100);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 100);
@@ -163,7 +172,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //3
+            Thread.Sleep(TIME); //3
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 150);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 150);
@@ -176,7 +185,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //4
+            Thread.Sleep(TIME); //4
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 200);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 200);
@@ -191,7 +200,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //5
+            Thread.Sleep(TIME); //5
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 250);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 250);
@@ -208,7 +217,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //6
+            Thread.Sleep(TIME); //6
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 300);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 300);
@@ -227,7 +236,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //7
+            Thread.Sleep(TIME); //7
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 350);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 350);
@@ -248,7 +257,7 @@ namespace CashRegister
             onScreen.DrawImage(bm, 0, 0);
             offScreen.Clear(Color.LightGray);
 
-            Thread.Sleep(250); //8
+            Thread.Sleep(TIME); //8
 
             offScreen.DrawRectangle(receiptPen, 250, 30, 225, 400);
             offScreen.FillRectangle(receiptBrush, 250, 30, 225, 400);
@@ -278,6 +287,7 @@ namespace CashRegister
         //New order
         private void newButton_Click(object sender, EventArgs e)
         {
+            //Reset Input
             burgers = 0;
             fries = 0;
             drinks = 0;
@@ -287,6 +297,16 @@ namespace CashRegister
             friesBox.Text = "0";
             drinkBox.Text = "0";
             tenderedBox.Text = "0";
+
+            //Reset Output
+            burgerCost = 0;
+            friesCost = 0;
+            drinksCost = 0;
+            subTotal = 0;
+            totalTax = 0;
+            total = 0;
+            change = 0;
+
             totalLabel.Text = "";
             changeLabel.Text = "";
 

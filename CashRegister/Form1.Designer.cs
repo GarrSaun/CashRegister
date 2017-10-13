@@ -47,7 +47,7 @@
             // 
             // burgerBox
             // 
-            this.burgerBox.Location = new System.Drawing.Point(96, 43);
+            this.burgerBox.Location = new System.Drawing.Point(96, 12);
             this.burgerBox.Name = "burgerBox";
             this.burgerBox.Size = new System.Drawing.Size(94, 20);
             this.burgerBox.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // friesBox
             // 
-            this.friesBox.Location = new System.Drawing.Point(96, 92);
+            this.friesBox.Location = new System.Drawing.Point(96, 52);
             this.friesBox.Name = "friesBox";
             this.friesBox.Size = new System.Drawing.Size(94, 20);
             this.friesBox.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             // drinkBox
             // 
-            this.drinkBox.Location = new System.Drawing.Point(96, 136);
+            this.drinkBox.Location = new System.Drawing.Point(96, 89);
             this.drinkBox.Name = "drinkBox";
             this.drinkBox.Size = new System.Drawing.Size(94, 20);
             this.drinkBox.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.goButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.goButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goButton.Location = new System.Drawing.Point(21, 177);
+            this.goButton.Location = new System.Drawing.Point(21, 127);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(169, 34);
             this.goButton.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             this.burgerLabel.AutoSize = true;
             this.burgerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.burgerLabel.Location = new System.Drawing.Point(12, 50);
+            this.burgerLabel.Location = new System.Drawing.Point(18, 19);
             this.burgerLabel.Name = "burgerLabel";
             this.burgerLabel.Size = new System.Drawing.Size(65, 13);
             this.burgerLabel.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 
             this.friesLabel.AutoSize = true;
             this.friesLabel.BackColor = System.Drawing.Color.Transparent;
-            this.friesLabel.Location = new System.Drawing.Point(26, 99);
+            this.friesLabel.Location = new System.Drawing.Point(32, 55);
             this.friesLabel.Name = "friesLabel";
             this.friesLabel.Size = new System.Drawing.Size(51, 13);
             this.friesLabel.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             this.drinkLabel.AutoSize = true;
             this.drinkLabel.BackColor = System.Drawing.Color.Transparent;
-            this.drinkLabel.Location = new System.Drawing.Point(18, 143);
+            this.drinkLabel.Location = new System.Drawing.Point(24, 92);
             this.drinkLabel.Name = "drinkLabel";
             this.drinkLabel.Size = new System.Drawing.Size(59, 13);
             this.drinkLabel.TabIndex = 6;
@@ -121,14 +121,14 @@
             // 
             this.totalLabel.BackColor = System.Drawing.Color.White;
             this.totalLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.Location = new System.Drawing.Point(24, 225);
+            this.totalLabel.Location = new System.Drawing.Point(24, 164);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(166, 60);
             this.totalLabel.TabIndex = 7;
             // 
             // tenderedBox
             // 
-            this.tenderedBox.Location = new System.Drawing.Point(96, 288);
+            this.tenderedBox.Location = new System.Drawing.Point(96, 230);
             this.tenderedBox.Name = "tenderedBox";
             this.tenderedBox.Size = new System.Drawing.Size(94, 20);
             this.tenderedBox.TabIndex = 8;
@@ -139,7 +139,7 @@
             // 
             this.tenderdLabel.AutoSize = true;
             this.tenderdLabel.BackColor = System.Drawing.Color.Transparent;
-            this.tenderdLabel.Location = new System.Drawing.Point(-2, 291);
+            this.tenderdLabel.Location = new System.Drawing.Point(3, 237);
             this.tenderdLabel.Name = "tenderdLabel";
             this.tenderdLabel.Size = new System.Drawing.Size(92, 13);
             this.tenderdLabel.TabIndex = 9;
@@ -151,7 +151,7 @@
             this.changeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
             this.changeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.changeButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeButton.Location = new System.Drawing.Point(29, 314);
+            this.changeButton.Location = new System.Drawing.Point(27, 256);
             this.changeButton.Name = "changeButton";
             this.changeButton.Size = new System.Drawing.Size(126, 21);
             this.changeButton.TabIndex = 10;
@@ -164,9 +164,9 @@
             // 
             this.changeLabel.BackColor = System.Drawing.Color.White;
             this.changeLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLabel.Location = new System.Drawing.Point(12, 338);
+            this.changeLabel.Location = new System.Drawing.Point(12, 280);
             this.changeLabel.Name = "changeLabel";
-            this.changeLabel.Size = new System.Drawing.Size(172, 23);
+            this.changeLabel.Size = new System.Drawing.Size(172, 104);
             this.changeLabel.TabIndex = 11;
             this.changeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
