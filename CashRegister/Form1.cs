@@ -13,7 +13,7 @@ using System.Media;
 
 namespace CashRegister
 {
-    public partial class calulatorForm : Form
+    public partial class registerForm : Form
     {
         //Global Variables
         double burgerCost;
@@ -37,8 +37,8 @@ namespace CashRegister
         const double DRINKS_PRICE = 0.99;
         const double TAX_RATE = 0.13;
         const int TIME = 250;
-                  
-        public calulatorForm()
+
+        public registerForm()
         {
             InitializeComponent();
         }
@@ -65,27 +65,33 @@ namespace CashRegister
         }
 
         //Calculate Cost with Tax
-        private void goButton_Click(object sender, EventArgs e)
+        private void totalButton_Click(object sender, EventArgs e)
         {
             try
             {
-                    burgers = Convert.ToInt16(burgerBox.Text);
-                    fries = Convert.ToInt16(friesBox.Text);
-                    drinks = Convert.ToInt16(drinkBox.Text);
+                burgers = Convert.ToInt16(burgerBox.Text);
+                fries = Convert.ToInt16(friesBox.Text);
+                drinks = Convert.ToInt16(drinkBox.Text);
 
-                    burgerCost = burgers * BURGER_PRICE;
-                    friesCost = fries * FRIES_PRICE;
-                    drinksCost = drinks * DRINKS_PRICE;
+                burgerCost = burgers * BURGER_PRICE;
+                friesCost = fries * FRIES_PRICE;
+                drinksCost = drinks * DRINKS_PRICE;
 
-                    subTotal = burgerCost + friesCost
-                        + drinksCost;
-                    totalTax = (burgerCost + friesCost
-                        + drinksCost) * TAX_RATE;
-                    total = totalTax + subTotal;
+                subTotal = burgerCost + friesCost
+                    + drinksCost;
+                totalTax = (burgerCost + friesCost
+                    + drinksCost) * TAX_RATE;
+                total = totalTax + subTotal;
 
-                    totalLabel.Text = "Sub Total: " + subTotal.ToString("¥0.00") + "\n" +
-                        "Tax: " + totalTax.ToString("¥0.00") + "\n" +
-                        "Total: " + total.ToString("¥0.00");
+                totalLabel.Text = "Sub Total: " + subTotal.ToString("¥0.00") + "\n" +
+                    "Tax: " + totalTax.ToString("¥0.00") + "\n" +
+                    "Total: " + total.ToString("¥0.00");
+
+                tenderedLabel.Visible = true;
+                tenderedBox.Visible = true;
+                changeButton.Visible = true;
+                changeLabel.Visible = true;
+
             }
 
             catch
@@ -94,7 +100,6 @@ namespace CashRegister
                 receiptButton.Visible = false;
                 return;
             }
-
         }
 
         //Calculate Change
@@ -114,7 +119,7 @@ namespace CashRegister
                 }
                 else
                 {
-                    changeLabel.Text = "You need an extra " + (change*-1).ToString("¥0.00") +
+                    changeLabel.Text = "You need an extra " + (change * -1).ToString("¥0.00") +
                         " to afford that.";
                     receiptButton.Visible = false;
                 }
@@ -312,6 +317,12 @@ namespace CashRegister
 
             totalLabel.Text = "";
             changeLabel.Text = "";
+
+            //unreveal stuff that was hidden at start
+            tenderedLabel.Visible = false;
+            tenderedBox.Visible = false;
+            changeButton.Visible = false;
+            changeLabel.Visible = false;
 
             //Clear Receipt Stuff
             newButton.Visible = false;

@@ -1,6 +1,6 @@
 ﻿namespace CashRegister
 {
-    partial class calulatorForm
+    partial class registerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calulatorForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(registerForm));
             this.burgerBox = new System.Windows.Forms.TextBox();
             this.friesBox = new System.Windows.Forms.TextBox();
             this.drinkBox = new System.Windows.Forms.TextBox();
-            this.goButton = new System.Windows.Forms.Button();
+            this.totalButton = new System.Windows.Forms.Button();
             this.burgerLabel = new System.Windows.Forms.Label();
             this.friesLabel = new System.Windows.Forms.Label();
             this.drinkLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.tenderedBox = new System.Windows.Forms.TextBox();
-            this.tenderdLabel = new System.Windows.Forms.Label();
+            this.tenderedLabel = new System.Windows.Forms.Label();
             this.changeButton = new System.Windows.Forms.Button();
             this.changeLabel = new System.Windows.Forms.Label();
             this.receiptButton = new System.Windows.Forms.Button();
@@ -73,20 +73,20 @@
             this.drinkBox.Text = "0";
             this.drinkBox.Click += new System.EventHandler(this.drinkBox_Click);
             // 
-            // goButton
+            // totalButton
             // 
-            this.goButton.BackColor = System.Drawing.Color.White;
-            this.goButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.goButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.goButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.goButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goButton.Location = new System.Drawing.Point(21, 149);
-            this.goButton.Name = "goButton";
-            this.goButton.Size = new System.Drawing.Size(169, 34);
-            this.goButton.TabIndex = 3;
-            this.goButton.Text = "Calculate Total";
-            this.goButton.UseVisualStyleBackColor = false;
-            this.goButton.Click += new System.EventHandler(this.goButton_Click);
+            this.totalButton.BackColor = System.Drawing.Color.White;
+            this.totalButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.totalButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.totalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.totalButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalButton.Location = new System.Drawing.Point(21, 149);
+            this.totalButton.Name = "totalButton";
+            this.totalButton.Size = new System.Drawing.Size(169, 34);
+            this.totalButton.TabIndex = 3;
+            this.totalButton.Text = "Calculate Total";
+            this.totalButton.UseVisualStyleBackColor = false;
+            this.totalButton.Click += new System.EventHandler(this.totalButton_Click);
             // 
             // burgerLabel
             // 
@@ -137,18 +137,20 @@
             this.tenderedBox.Size = new System.Drawing.Size(94, 20);
             this.tenderedBox.TabIndex = 4;
             this.tenderedBox.Text = "0";
+            this.tenderedBox.Visible = false;
             this.tenderedBox.Click += new System.EventHandler(this.tenderedBox_Click);
             // 
-            // tenderdLabel
+            // tenderedLabel
             // 
-            this.tenderdLabel.AutoSize = true;
-            this.tenderdLabel.BackColor = System.Drawing.Color.Transparent;
-            this.tenderdLabel.ForeColor = System.Drawing.Color.White;
-            this.tenderdLabel.Location = new System.Drawing.Point(-2, 252);
-            this.tenderdLabel.Name = "tenderdLabel";
-            this.tenderdLabel.Size = new System.Drawing.Size(92, 13);
-            this.tenderdLabel.TabIndex = 9;
-            this.tenderdLabel.Text = "Amount Tendered";
+            this.tenderedLabel.AutoSize = true;
+            this.tenderedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.tenderedLabel.ForeColor = System.Drawing.Color.White;
+            this.tenderedLabel.Location = new System.Drawing.Point(-2, 252);
+            this.tenderedLabel.Name = "tenderedLabel";
+            this.tenderedLabel.Size = new System.Drawing.Size(92, 13);
+            this.tenderedLabel.TabIndex = 9;
+            this.tenderedLabel.Text = "Amount Tendered";
+            this.tenderedLabel.Visible = false;
             // 
             // changeButton
             // 
@@ -163,6 +165,7 @@
             this.changeButton.Text = "Calculate Change";
             this.changeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.changeButton.UseVisualStyleBackColor = false;
+            this.changeButton.Visible = false;
             this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
             // 
             // changeLabel
@@ -174,6 +177,7 @@
             this.changeLabel.Size = new System.Drawing.Size(172, 88);
             this.changeLabel.TabIndex = 11;
             this.changeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.changeLabel.Visible = false;
             // 
             // receiptButton
             // 
@@ -219,7 +223,7 @@
             this.nameLabel.TabIndex = 14;
             this.nameLabel.Text = "King Donalds";
             // 
-            // calulatorForm
+            // registerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,19 +234,19 @@
             this.Controls.Add(this.receiptButton);
             this.Controls.Add(this.changeLabel);
             this.Controls.Add(this.changeButton);
-            this.Controls.Add(this.tenderdLabel);
+            this.Controls.Add(this.tenderedLabel);
             this.Controls.Add(this.tenderedBox);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.drinkLabel);
             this.Controls.Add(this.friesLabel);
             this.Controls.Add(this.burgerLabel);
-            this.Controls.Add(this.goButton);
+            this.Controls.Add(this.totalButton);
             this.Controls.Add(this.drinkBox);
             this.Controls.Add(this.friesBox);
             this.Controls.Add(this.burgerBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "calulatorForm";
-            this.Text = "Cash Register";
+            this.Name = "registerForm";
+            this.Text = "King Donalds Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,13 +257,13 @@
         private System.Windows.Forms.TextBox burgerBox;
         private System.Windows.Forms.TextBox friesBox;
         private System.Windows.Forms.TextBox drinkBox;
-        private System.Windows.Forms.Button goButton;
+        private System.Windows.Forms.Button totalButton;
         private System.Windows.Forms.Label burgerLabel;
         private System.Windows.Forms.Label friesLabel;
         private System.Windows.Forms.Label drinkLabel;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.TextBox tenderedBox;
-        private System.Windows.Forms.Label tenderdLabel;
+        private System.Windows.Forms.Label tenderedLabel;
         private System.Windows.Forms.Button changeButton;
         private System.Windows.Forms.Label changeLabel;
         private System.Windows.Forms.Button receiptButton;
